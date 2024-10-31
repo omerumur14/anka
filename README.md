@@ -1,6 +1,6 @@
 # anka
 
-A new Flutter project.
+Hackathon 2024 mobile project.
 
 ## Getting Started
 
