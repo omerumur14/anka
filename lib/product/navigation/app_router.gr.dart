@@ -67,6 +67,25 @@ class NoteRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PdfView]
+class PdfRoute extends PageRouteInfo<void> {
+  const PdfRoute({List<PageRouteInfo>? children})
+      : super(
+          PdfRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PdfRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const PdfView();
+    },
+  );
+}
+
+/// generated route for
 /// [QuestionView]
 class QuestionRoute extends PageRouteInfo<void> {
   const QuestionRoute({List<PageRouteInfo>? children})

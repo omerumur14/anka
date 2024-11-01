@@ -1,6 +1,7 @@
 import 'package:anka/feature/home/view/home_view.dart';
 import 'package:anka/feature/login/view/login_view.dart';
 import 'package:anka/feature/note/view/note_view.dart';
+import 'package:anka/feature/pdf/view/pdf_view.dart';
 import 'package:anka/feature/question/view/question_view.dart';
 import 'package:anka/feature/signup/view/signup_view.dart';
 import 'package:auto_route/auto_route.dart';
@@ -19,5 +20,6 @@ final class AppRouter extends RootStackRouter {
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: QuestionRoute.page),
         AutoRoute(page: NoteRoute.page),
+        AutoRoute(page: PdfRoute.page),
       ];
 }

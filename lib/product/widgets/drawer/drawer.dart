@@ -64,6 +64,17 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.picture_as_pdf_outlined,
+                color: Theme.of(context).colorScheme.onSurface),
+            title: Text(
+              "PDF Özetle",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            onTap: () {
+              context.router.push(const PdfRoute());
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.person,
                 color: Theme.of(context).colorScheme.onSurface),
             title: Text(

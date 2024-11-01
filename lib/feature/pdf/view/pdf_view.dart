@@ -1,25 +1,23 @@
-import 'package:anka/product/services/image_choose_file.dart';
-import 'package:anka/product/services/upload_image.dart';
+import 'package:anka/product/services/pdf_choose_file.dart';
 import 'package:anka/product/widgets/appbar/appbar.dart';
 import 'package:anka/product/widgets/button/button.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class QuestionView extends StatefulWidget {
-  const QuestionView({super.key});
+class PdfView extends StatefulWidget {
+  const PdfView({super.key});
 
   @override
-  State<QuestionView> createState() => _QuestionViewState();
+  State<PdfView> createState() => _PdfViewState();
 }
 
-class _QuestionViewState extends State<QuestionView> {
+class _PdfViewState extends State<PdfView> {
   @override
   void initState() {
     super.initState();
     // Sayfa oluşturulduğunda ChooseFile sınıfındaki objFile değişkenini sıfırla
-    ChooseFile.objFile = null;
+    PdfChooseFile.objFile = null;
   }
 
   @override
@@ -32,7 +30,7 @@ class _QuestionViewState extends State<QuestionView> {
             Padding(
               padding: const EdgeInsets.only(top: 32.0),
               child: Text(
-                'Soru Çözdür',
+                'PDF Özetle',
                 style: Theme.of(context).textTheme.displaySmall,
               ),
             ),
@@ -49,7 +47,7 @@ class _QuestionViewState extends State<QuestionView> {
                   children: [
                     CustomButton(
                       onPressed: () async {
-                        await ChooseFile.chooseFileUsingFilePicker();
+                        await PdfChooseFile.chooseFileUsingFilePicker();
                         setState(() {});
                       },
                       text: 'Dosya Seç',
@@ -61,7 +59,7 @@ class _QuestionViewState extends State<QuestionView> {
                         padding: const EdgeInsets.all(16),
                         child: Text(
                           textAlign: TextAlign.center,
-                          'Dosya Adı: ${ChooseFile.objFile?.name ?? 'Dosya Seçilmedi'}',
+                          'Dosya Adı: ${PdfChooseFile.objFile?.name ?? 'Dosya Seçilmedi'}',
                           style:
                               Theme.of(context).textTheme.titleLarge?.copyWith(
                                     color: Theme.of(context)
@@ -74,7 +72,7 @@ class _QuestionViewState extends State<QuestionView> {
                     Padding(
                       padding: const EdgeInsets.all(16),
                       child: Text(
-                        'Dosya Boyutu: ${((ChooseFile.objFile?.size.toDouble() ?? 0) / 1000000).toStringAsFixed(2)} Mb',
+                        'Dosya Boyutu: ${((PdfChooseFile.objFile?.size.toDouble() ?? 0) / 1000000).toStringAsFixed(2)} Mb',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               color:
                                   Theme.of(context).colorScheme.inverseSurface,
@@ -88,16 +86,7 @@ class _QuestionViewState extends State<QuestionView> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: CustomButton(
-                onPressed: () {
-                  if (ChooseFile.objFile != null) {
-                    UploadImage.uploadFile('uploadUrl');
-                  } else {
-                    BotToast.showText(
-                      text: 'Lütfen Önce Fotoğrafı Seçin!!',
-                      contentColor: Theme.of(context).colorScheme.error,
-                    );
-                  }
-                },
+                onPressed: () {},
                 text: 'Gönder',
                 backgroundColor: Theme.of(context).colorScheme.primary,
               ),

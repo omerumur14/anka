@@ -1,5 +1,6 @@
 import 'package:anka/product/navigation/app_router.dart';
 import 'package:anka/product/provider/theme_provider.dart';
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'util.dart';
@@ -37,6 +38,7 @@ class _MyAppContent extends StatelessWidget {
       title: 'Anka',
       theme: theme.light(),
       darkTheme: theme.dark(),
+      builder: BotToastInit(),
       themeMode: Provider.of<ThemeProvider>(context).darkMode
           ? ThemeMode.dark
           : ThemeMode.light,

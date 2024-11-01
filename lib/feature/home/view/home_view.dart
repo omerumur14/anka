@@ -46,6 +46,18 @@ class _HomeViewState extends State<HomeView> {
                 context.router.push(const NoteRoute());
               },
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: HomeCardWidget(
+              leadingIcon: Icons.picture_as_pdf_outlined,
+              title: 'PDF Özetle',
+              subtitle:
+                  'Yapay zeka ile PDF dosyalarınızı özetlettirebilirsiniz.',
+              onPressed: () {
+                context.router.push(const PdfRoute());
+              },
+            ),
           )
         ],
       ),
