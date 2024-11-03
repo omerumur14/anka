@@ -23,7 +23,7 @@ class CustomDrawer extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onSurface),
             ),
             accountEmail: Text(
-              "kullanici@example.com",
+              "alikankosee1@gmail.com",
               style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
             ),
             currentAccountPicture: const CircleAvatar(
