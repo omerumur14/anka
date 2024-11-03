@@ -180,7 +180,8 @@ class _QuestionViewState extends State<QuestionView> {
                                               await FlutterClipboard.copy(
                                                   _questionResult!);
                                               BotToast.showText(
-                                                  text: 'Pdf Özeti Kopyalandı',
+                                                  text:
+                                                      'Soru Yanıtı Kopyalandı',
                                                   contentColor: Colors.green);
                                             },
                                           ),
